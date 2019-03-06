@@ -11,7 +11,7 @@
  		"style.css"
  	],
  	"content_scripts": [{
- 		"matches": ["https://www.dndbeyond.com/profile/*/characters/*"],
+ 		"matches": ["https://www.dndbeyond.com/profile/*/characters/*", "https://www.dndbeyond.com/characters/*"],
  		"js": ["script.js"],
 		"css": ["style.css"]
  	}]
