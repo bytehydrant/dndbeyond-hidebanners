@@ -1,0 +1,17 @@
+ {
+ 	"name": "D&D Beyond Banner Minimizer",
+ 	"version": "0.1",
+ 	"description": "Hides the banners and navigation controls on D&D Beyond characters pages.",
+ 	"manifest_version": 2,
+ 	"permissions": [
+ 		"tabs",
+ 		"activeTab"
+ 	],
+ 	"web_accessible_resources": [
+ 		"style.css"
+ 	],
+ 	"content_scripts": [{
+ 		"matches": ["https://www.dndbeyond.com/profile/*/characters/*"],
+ 		"js": ["script.js"]
+ 	}]
+ }
