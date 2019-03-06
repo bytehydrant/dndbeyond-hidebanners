@@ -12,6 +12,7 @@
  	],
  	"content_scripts": [{
  		"matches": ["https://www.dndbeyond.com/profile/*/characters/*"],
- 		"js": ["script.js"]
+ 		"js": ["script.js"],
+		"css": ["style.css"]
  	}]
  }

@@ -7,10 +7,25 @@ for (i = 0; i < x.length; i++) {
 var mmt = document.getElementById("mega-menu-target");
 mmt.parentNode.removeChild(mmt);
 
-document.body.style.backgroundPositionY = "93px";
+// Listen for any dynamic changes to the document head and if the extension css isn't at the end, remove 
+// and re-add it so it's guaranteed to win. Without this, other dynamically loaded styles will eventually beat our out
+var link = document.createElement("link");
+link.href = chrome.extension.getURL("style.css");
+link.type = "text/css";
+link.rel = "stylesheet";
+link.id = "extensionStyles";
+var observer = new MutationObserver(function(mutations)
+{
+	if (document.head.lastChild == link)
+	{
+		return;
+	}
 
-var tt = document.getElementsByClassName("ct-tooltip");
+	if (document.head.contains(link))
+	{
+		document.head.removeChild(link);
+	}
 
-var ev = document.createEvent('Events');
-ev.initEvent("click", true, false);
-tt[0].dispatchEvent(ev);
+	document.head.appendChild(link);
+});
+observer.observe(document.head, { childList: true, subTree: true });

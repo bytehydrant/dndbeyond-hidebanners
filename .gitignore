@@ -1,8 +1,2 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/.vs/slnx.sqlite
+﻿.vs
 /package.zip
-/.vs/dndbeyond-hidebanners/v15/.suo
-/.vs/VSWorkspaceState.json
