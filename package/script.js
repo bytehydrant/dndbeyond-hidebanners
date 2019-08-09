@@ -14,15 +14,12 @@ link.href = chrome.extension.getURL("style.css");
 link.type = "text/css";
 link.rel = "stylesheet";
 link.id = "extensionStyles";
-var observer = new MutationObserver(function(mutations)
-{
-	if (document.head.lastChild == link)
-	{
+var observer = new MutationObserver(function (mutations) {
+	if (document.head.lastChild == link) {
 		return;
 	}
 
-	if (document.head.contains(link))
-	{
+	if (document.head.contains(link)) {
 		document.head.removeChild(link);
 	}
 
