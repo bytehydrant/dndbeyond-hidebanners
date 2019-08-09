@@ -29,3 +29,21 @@ var observer = new MutationObserver(function(mutations)
 	document.head.appendChild(link);
 });
 observer.observe(document.head, { childList: true, subTree: true });
+
+function clickFirstElementByClass(classNames) {
+	var element = document.getElementsByClassName(classNames)[0];
+	var mouseEvent = new MouseEvent("click", { bubbles: true });
+	element.dispatchEvent(mouseEvent);
+}
+
+var bodyObserver = new MutationObserver(function (mutations) {
+	if (!document.body.getElementsByClassName("ct-tooltip ct-sidebar__control ct-sidebar__control--expand ct-tooltip--interactive")[0]) {
+		return;
+	}
+
+	clickFirstElementByClass("ct-tooltip ct-sidebar__control ct-sidebar__control--expand ct-tooltip--interactive");
+	clickFirstElementByClass("ct-tooltip ct-sidebar__control ct-sidebar__control--fixed ct-sidebar__control--fixed-unselected ct-tooltip--interactive");
+	document.getElementsByClassName("ct-sidebar--visible")[0].style.top = "6px";
+	bodyObserver.disconnect();
+});
+bodyObserver.observe(document.body, { childList: true, subTree: true });
