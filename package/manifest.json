@@ -1,6 +1,6 @@
  {
  	"name": "D&D Beyond Banner Minimizer",
- 	"version": "0.2",
+ 	"version": "0.3",
  	"description": "Hides the banners and navigation controls on D&D Beyond characters pages.",
  	"manifest_version": 2,
  	"permissions": [
