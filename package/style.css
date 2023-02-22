@@ -6,19 +6,16 @@
 	visibility: hidden;
 	height: 0px;
 }
-.ct-sidebar--hidden {
-	top: 6px;
-}
-.ct-sidebar--visible {
-	top: 6px;
+.ct-sidebar {
+	top : 6px !important
 }
 @media(min-width: 768px) {
 	html body.body-rpgcharacter-sheet {
-		background-position-y: 93px;
+		background-position-y: 93px !important;
 	}
 }
 @media(min-width: 1200px) {
 	html body.body-rpgcharacter-sheet {
-		background-position-y: 115px;
+		background-position-y: 115px !important;
 	}
 }

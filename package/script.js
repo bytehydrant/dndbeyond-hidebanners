@@ -10,7 +10,7 @@ mmt.parentNode.removeChild(mmt);
 // Listen for any dynamic changes to the document head, and if the extension css isn't at the end, remove 
 // and re-add it so it's guaranteed to win. Without this, other dynamically loaded styles will eventually beat ours out
 var link = document.createElement("link");
-link.href = chrome.extension.getURL("style.css");
+link.href = chrome.runtime.getURL("style.css");
 link.type = "text/css";
 link.rel = "stylesheet";
 link.id = "extensionStyles";
